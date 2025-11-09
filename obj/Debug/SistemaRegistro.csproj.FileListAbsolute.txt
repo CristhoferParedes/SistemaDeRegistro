@@ -1,0 +1,7 @@
+C:\Users\Cristhofer\source\repos\SistemaRegistro\bin\Debug\SistemaRegistro.exe.config
+C:\Users\Cristhofer\source\repos\SistemaRegistro\bin\Debug\SistemaRegistro.exe
+C:\Users\Cristhofer\source\repos\SistemaRegistro\bin\Debug\SistemaRegistro.pdb
+C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.csproj.AssemblyReference.cache
+C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.csproj.CoreCompileInputs.cache
+C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.exe
+C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.pdb
