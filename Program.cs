@@ -5,6 +5,7 @@ class Program
 {
     static void Main()
     {
+
         MostrarMenuPrincipal();
     }
 
@@ -18,10 +19,20 @@ class Program
         do
         {
             Console.Clear();
-            Console.WriteLine("SISTEMA DE GESTIÓN DE ASISTENCIA\n");
+            //Console.WriteLine("SISTEMA DE GESTIÓN DE ASISTENCIA\n");
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("------------------------------------------------------");
+            Console.WriteLine("           Sistema de gestion de asistencias          ");
+            Console.WriteLine("------------------------------------------------------");
 
             for (int i = 0; i < opciones.Length; i++)
+            {
+                Console.ResetColor();
                 Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
+                Console.ResetColor();
+            }
+                
 
             tecla = Console.ReadKey(true).Key;
 

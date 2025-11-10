@@ -5,3 +5,4 @@ C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.cspro
 C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.csproj.CoreCompileInputs.cache
 C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.exe
 C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.pdb
+C:\Users\Cristhofer\source\repos\SistemaRegistro\obj\Debug\SistemaRegistro.exe.config
