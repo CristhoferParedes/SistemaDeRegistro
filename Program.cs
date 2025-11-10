@@ -1,282 +1,285 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class Program
+namespace SistemaRegistro
 {
-    static void Main()
+    class Program
     {
-
-        MostrarMenuPrincipal();
-    }
-
-    // MENÚ PRINCIPAL
-    static void MostrarMenuPrincipal()
-    {
-        string[] opciones = { "REGISTRAR", "ASISTENCIA", "REPORTES", "SALIR" };
-        int seleccion = 0;
-        ConsoleKey tecla;
-
-        do
+        static void Main(string[] args)
         {
-            Console.Clear();
-            //Console.WriteLine("SISTEMA DE GESTIÓN DE ASISTENCIA\n");
-            Console.BackgroundColor = ConsoleColor.Green;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("------------------------------------------------------");
-            Console.WriteLine("           Sistema de gestion de asistencias          ");
-            Console.WriteLine("------------------------------------------------------");
+            int opcion;
+            opcion = ClaseMenu.OpcionMenu();
+        }
 
-            for (int i = 0; i < opciones.Length; i++)
+        // MENÚ PRINCIPAL
+        //static void MostrarMenuPrincipal()
+        //{
+        //    string[] opciones = { "REGISTRAR", "ASISTENCIA", "REPORTES", "SALIR" };
+        //    int seleccion = 0;
+        //    ConsoleKey tecla;
+
+        //    do
+        //    {
+        //        Console.Clear();
+        //        //Console.WriteLine("SISTEMA DE GESTIÓN DE ASISTENCIA\n");
+        //        Console.BackgroundColor = ConsoleColor.Green;
+        //        Console.ForegroundColor = ConsoleColor.Black;
+        //        Console.WriteLine("------------------------------------------------------");
+        //        Console.WriteLine("           SISTEMA DE GESTION DE ASISTENCIAS          ");
+        //        Console.WriteLine("------------------------------------------------------");
+
+        //        for (int i = 0; i < opciones.Length; i++)
+        //        {
+        //            Console.ResetColor();
+        //            Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
+        //            Console.ResetColor();
+        //        }
+
+
+        //        tecla = Console.ReadKey(true).Key;
+
+        //        if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
+        //        else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
+
+        //    } while (tecla != ConsoleKey.Enter);
+
+        //    switch (seleccion)
+        //    {
+        //        case 0: SubmenuRegistro(); break;
+        //        case 2: SubmenuReportes(); break;
+        //        case 3: Environment.Exit(0); break;
+        //    }
+        //}
+
+        // SUBMENÚ REGISTRO
+        static void SubmenuRegistro()
+        {
+            string[] opciones = { "1DOCENTE", "2ESTUDIANTE", "3CURSO", "VOLVER" };
+            int seleccion = 0;
+            ConsoleKey tecla;
+
+            do
             {
-                Console.ResetColor();
-                Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
-                Console.ResetColor();
+                Console.Clear();
+                Console.WriteLine("SUBMENÚ DE REGISTRO\n");
+
+                for (int i = 0; i < opciones.Length; i++)
+                    Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
+
+                tecla = Console.ReadKey(true).Key;
+
+                if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
+                else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
+
+            } while (tecla != ConsoleKey.Enter);
+
+            switch (seleccion)
+            {
+                case 0: Docente.Registrar(); break;
+                case 1: Estudiante.Registrar(); break;
+                case 2: Curso.Registrar(); break;
+                //case 3: MostrarMenuPrincipal(); return;
             }
-                
 
-            tecla = Console.ReadKey(true).Key;
-
-            if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
-            else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
-
-        } while (tecla != ConsoleKey.Enter);
-
-        switch (seleccion)
-        {
-            case 0: SubmenuRegistro(); break;
-            case 2: SubmenuReportes(); break;
-            case 3: Environment.Exit(0); break;
+            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.ReadKey();
+            SubmenuRegistro();
         }
-    }
 
-    // SUBMENÚ REGISTRO
-    static void SubmenuRegistro()
-    {
-        string[] opciones = { "1DOCENTE", "2ESTUDIANTE", "3CURSO", "VOLVER" };
-        int seleccion = 0;
-        ConsoleKey tecla;
+        // SUBMENÚ REPORTES
+        static void SubmenuReportes()
+        {
+            string[] opciones = { "DOCENTE", "ESTUDIANTE", "CURSO", "VOLVER" };
+            int seleccion = 0;
+            ConsoleKey tecla;
 
-        do
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("SUBMENÚ DE REPORTES\n");
+
+                for (int i = 0; i < opciones.Length; i++)
+                    Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
+
+                tecla = Console.ReadKey(true).Key;
+
+                if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
+                else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
+
+            } while (tecla != ConsoleKey.Enter);
+
+            switch (seleccion)
+            {
+                case 0: MostrarReporteDocente(); break;
+                case 1: MostrarReporteEstudiante(); break;
+                case 2: MostrarReporteCurso(); break;
+                //case 3: MostrarMenuPrincipal(); return;
+            }
+
+            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
+            Console.ReadKey();
+            SubmenuReportes();
+        }
+
+        // REPORTES
+        static void MostrarReporteDocente()
         {
             Console.Clear();
-            Console.WriteLine("SUBMENÚ DE REGISTRO\n");
-
-            for (int i = 0; i < opciones.Length; i++)
-                Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
-
-            tecla = Console.ReadKey(true).Key;
-
-            if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
-            else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
-
-        } while (tecla != ConsoleKey.Enter);
-
-        switch (seleccion)
-        {
-            case 0: Docente.Registrar(); break;
-            case 1: Estudiante.Registrar(); break;
-            case 2: Curso.Registrar(); break;
-            case 3: MostrarMenuPrincipal(); return;
+            Console.WriteLine("LISTADO DE DOCENTES:");
+            Console.WriteLine("DNI\t\tNOMBRE");
+            foreach (var d in Docente.ObtenerTodos())
+                Console.WriteLine($"{d.GetDni()}\t{d.GetNombre()}");
         }
 
-        Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-        Console.ReadKey();
-        SubmenuRegistro();
-    }
-
-    // SUBMENÚ REPORTES
-    static void SubmenuReportes()
-    {
-        string[] opciones = { "DOCENTE", "ESTUDIANTE", "CURSO", "VOLVER" };
-        int seleccion = 0;
-        ConsoleKey tecla;
-
-        do
+        static void MostrarReporteEstudiante()
         {
             Console.Clear();
-            Console.WriteLine("SUBMENÚ DE REPORTES\n");
-
-            for (int i = 0; i < opciones.Length; i++)
-                Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
-
-            tecla = Console.ReadKey(true).Key;
-
-            if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
-            else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
-
-        } while (tecla != ConsoleKey.Enter);
-
-        switch (seleccion)
-        {
-            case 0: MostrarReporteDocente(); break;
-            case 1: MostrarReporteEstudiante(); break;
-            case 2: MostrarReporteCurso(); break;
-            case 3: MostrarMenuPrincipal(); return;
+            Console.WriteLine("LISTADO DE ESTUDIANTES:");
+            Console.WriteLine("DNI\t\tNOMBRE");
+            foreach (var e in Estudiante.ObtenerTodos())
+                Console.WriteLine($"{e.GetDni()}\t{e.GetNombre()}");
         }
 
-        Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-        Console.ReadKey();
-        SubmenuReportes();
-    }
-
-    // REPORTES
-    static void MostrarReporteDocente()
-    {
-        Console.Clear();
-        Console.WriteLine("LISTADO DE DOCENTES:");
-        Console.WriteLine("DNI\t\tNOMBRE");
-        foreach (var d in Docente.ObtenerTodos())
-            Console.WriteLine($"{d.GetDni()}\t{d.GetNombre()}");
-    }
-
-    static void MostrarReporteEstudiante()
-    {
-        Console.Clear();
-        Console.WriteLine("LISTADO DE ESTUDIANTES:");
-        Console.WriteLine("DNI\t\tNOMBRE");
-        foreach (var e in Estudiante.ObtenerTodos())
-            Console.WriteLine($"{e.GetDni()}\t{e.GetNombre()}");
-    }
-
-    static void MostrarReporteCurso()
-    {
-        Console.Clear();
-        Console.WriteLine("LISTADO DE CURSOS:");
-        Console.WriteLine("CÓDIGO\tNOMBRE\t\tPRECIO");
-        foreach (var c in Curso.ObtenerTodos())
-            Console.WriteLine($"{c.GetCodigo()}\t{c.GetNombre()}\t{c.GetPrecio()}");
-    }
-}
-
-// CLASE DOCENTE
-public class Docente
-{
-    private string dni;
-    private string nombre;
-    private static List<Docente> docentes = new List<Docente>();
-
-    public string GetDni() => dni;
-    public string GetNombre() => nombre;
-    public void SetDni(string valor) => dni = valor;
-    public void SetNombre(string valor) => nombre = valor;
-
-    public static void Registrar()
-    {
-        string dni;
-        do
+        static void MostrarReporteCurso()
         {
-            Console.Write("DNI DOCENTE (8 dígitos): ");
-            dni = Console.ReadLine();
-        } while (dni.Length != 8 || !long.TryParse(dni, out _));
+            Console.Clear();
+            Console.WriteLine("LISTADO DE CURSOS:");
+            Console.WriteLine("CÓDIGO\tNOMBRE\t\tPRECIO");
+            foreach (var c in Curso.ObtenerTodos())
+                Console.WriteLine($"{c.GetCodigo()}\t{c.GetNombre()}\t{c.GetPrecio()}");
+        }
+    }
 
-        if (docentes.Exists(d => d.GetDni() == dni))
+    // CLASE DOCENTE
+    public class Docente
+    {
+        private string dni;
+        private string nombre;
+        private static List<Docente> docentes = new List<Docente>();
+
+        public string GetDni() => dni;
+        public string GetNombre() => nombre;
+        public void SetDni(string valor) => dni = valor;
+        public void SetNombre(string valor) => nombre = valor;
+
+        public static void Registrar()
         {
-            Console.WriteLine("El DNI ya está registrado.");
-            return;
+            string dni;
+            do
+            {
+                Console.Write("DNI DOCENTE (8 dígitos): ");
+                dni = Console.ReadLine();
+            } while (dni.Length != 8 || !long.TryParse(dni, out _));
+
+            if (docentes.Exists(d => d.GetDni() == dni))
+            {
+                Console.WriteLine("El DNI ya está registrado.");
+                return;
+            }
+
+            Console.Write("NOMBRE DOCENTE: ");
+            string nombre = Console.ReadLine();
+
+            Docente nuevo = new Docente();
+            nuevo.SetDni(dni);
+            nuevo.SetNombre(nombre);
+            docentes.Add(nuevo);
+
+            Console.WriteLine("Se guardó correctamente al nuevo docente.");
         }
 
-        Console.Write("NOMBRE DOCENTE: ");
-        string nombre = Console.ReadLine();
-
-        Docente nuevo = new Docente();
-        nuevo.SetDni(dni);
-        nuevo.SetNombre(nombre);
-        docentes.Add(nuevo);
-
-        Console.WriteLine("Se guardó correctamente al nuevo docente.");
+        public static List<Docente> ObtenerTodos() => docentes;
     }
 
-    public static List<Docente> ObtenerTodos() => docentes;
-}
-
-// CLASE ESTUDIANTE
-public class Estudiante
-{
-    private string dni;
-    private string nombre;
-    private static List<Estudiante> estudiantes = new List<Estudiante>();
-
-    public string GetDni() => dni;
-    public string GetNombre() => nombre;
-    public void SetDni(string valor) => dni = valor;
-    public void SetNombre(string valor) => nombre = valor;
-
-    public static void Registrar()
+    // CLASE ESTUDIANTE
+    public class Estudiante
     {
-        string dni;
-        do
-        {
-            Console.Write("DNI ESTUDIANTE (8 dígitos): ");
-            dni = Console.ReadLine();
-        } while (dni.Length != 8 || !long.TryParse(dni, out _));
+        private string dni;
+        private string nombre;
+        private static List<Estudiante> estudiantes = new List<Estudiante>();
 
-        if (estudiantes.Exists(e => e.GetDni() == dni))
+        public string GetDni() => dni;
+        public string GetNombre() => nombre;
+        public void SetDni(string valor) => dni = valor;
+        public void SetNombre(string valor) => nombre = valor;
+
+        public static void Registrar()
         {
-            Console.WriteLine(" El DNI ya está registrado.");
-            return;
+            string dni;
+            do
+            {
+                Console.Write("DNI ESTUDIANTE (8 dígitos): ");
+                dni = Console.ReadLine();
+            } while (dni.Length != 8 || !long.TryParse(dni, out _));
+
+            if (estudiantes.Exists(e => e.GetDni() == dni))
+            {
+                Console.WriteLine(" El DNI ya está registrado.");
+                return;
+            }
+
+            Console.Write("NOMBRE ESTUDIANTE: ");
+            string nombre = Console.ReadLine();
+
+            Estudiante nuevo = new Estudiante();
+            nuevo.SetDni(dni);
+            nuevo.SetNombre(nombre);
+            estudiantes.Add(nuevo);
+
+            Console.WriteLine("Se guardó correctamente al nuevo estudiante.");
         }
 
-        Console.Write("NOMBRE ESTUDIANTE: ");
-        string nombre = Console.ReadLine();
-
-        Estudiante nuevo = new Estudiante();
-        nuevo.SetDni(dni);
-        nuevo.SetNombre(nombre);
-        estudiantes.Add(nuevo);
-
-        Console.WriteLine("Se guardó correctamente al nuevo estudiante.");
+        public static List<Estudiante> ObtenerTodos() => estudiantes;
     }
 
-    public static List<Estudiante> ObtenerTodos() => estudiantes;
-}
-
-// CLASE CURSO
-public class Curso
-{
-    private string codigo;
-    private string nombre;
-    private double precio;
-    private static List<Curso> cursos = new List<Curso>();
-
-    public string GetCodigo() => codigo;
-    public string GetNombre() => nombre;
-    public double GetPrecio() => precio;
-    public void SetCodigo(string valor) => codigo = valor;
-    public void SetNombre(string valor) => nombre = valor;
-    public void SetPrecio(double valor) => precio = valor;
-
-    public static void Registrar()
+    // CLASE CURSO
+    public class Curso
     {
-        string codigo;
-        do
-        {
-            Console.Write("CÓDIGO DEL CURSO (6 caracteres): ");
-            codigo = Console.ReadLine();
-        } while (codigo.Length != 6 || cursos.Exists(c => c.GetCodigo() == codigo));
+        private string codigo;
+        private string nombre;
+        private double precio;
+        private static List<Curso> cursos = new List<Curso>();
 
-        Console.Write("NOMBRE DEL CURSO: ");
-        string nombre = Console.ReadLine();
-        if (cursos.Exists(c => c.GetNombre() == nombre))
+        public string GetCodigo() => codigo;
+        public string GetNombre() => nombre;
+        public double GetPrecio() => precio;
+        public void SetCodigo(string valor) => codigo = valor;
+        public void SetNombre(string valor) => nombre = valor;
+        public void SetPrecio(double valor) => precio = valor;
+
+        public static void Registrar()
         {
-            Console.WriteLine("El nombre del curso ya existe.");
-            return;
+            string codigo;
+            do
+            {
+                Console.Write("CÓDIGO DEL CURSO (6 caracteres): ");
+                codigo = Console.ReadLine();
+            } while (codigo.Length != 6 || cursos.Exists(c => c.GetCodigo() == codigo));
+
+            Console.Write("NOMBRE DEL CURSO: ");
+            string nombre = Console.ReadLine();
+            if (cursos.Exists(c => c.GetNombre() == nombre))
+            {
+                Console.WriteLine("El nombre del curso ya existe.");
+                return;
+            }
+
+            Console.Write("PRECIO DEL CURSO: ");
+            if (!double.TryParse(Console.ReadLine(), out double precio) || precio < 0)
+            {
+                Console.WriteLine("Precio inválido.");
+                return;
+            }
+
+            Curso nuevo = new Curso();
+            nuevo.SetCodigo(codigo);
+            nuevo.SetNombre(nombre);
+            nuevo.SetPrecio(precio);
+            cursos.Add(nuevo);
+
+            Console.WriteLine("Se guardó correctamente el nuevo curso.");
         }
 
-        Console.Write("PRECIO DEL CURSO: ");
-        if (!double.TryParse(Console.ReadLine(), out double precio) || precio < 0)
-        {
-            Console.WriteLine("Precio inválido.");
-            return;
-        }
-
-        Curso nuevo = new Curso();
-        nuevo.SetCodigo(codigo);
-        nuevo.SetNombre(nombre);
-        nuevo.SetPrecio(precio);
-        cursos.Add(nuevo);
-
-        Console.WriteLine("Se guardó correctamente el nuevo curso.");
+        public static List<Curso> ObtenerTodos() => cursos;
     }
-
-    public static List<Curso> ObtenerTodos() => cursos;
 }
