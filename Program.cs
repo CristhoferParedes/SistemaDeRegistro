@@ -7,84 +7,8 @@ namespace SistemaRegistro
     {
         static void Main(string[] args)
         {
-            int opcion;
-            opcion = ClaseMenu.OpcionMenu();
-        }
-
-        // MENÚ PRINCIPAL
-        //static void MostrarMenuPrincipal()
-        //{
-        //    string[] opciones = { "REGISTRAR", "ASISTENCIA", "REPORTES", "SALIR" };
-        //    int seleccion = 0;
-        //    ConsoleKey tecla;
-
-        //    do
-        //    {
-        //        Console.Clear();
-        //        //Console.WriteLine("SISTEMA DE GESTIÓN DE ASISTENCIA\n");
-        //        Console.BackgroundColor = ConsoleColor.Green;
-        //        Console.ForegroundColor = ConsoleColor.Black;
-        //        Console.WriteLine("------------------------------------------------------");
-        //        Console.WriteLine("           SISTEMA DE GESTION DE ASISTENCIAS          ");
-        //        Console.WriteLine("------------------------------------------------------");
-
-        //        for (int i = 0; i < opciones.Length; i++)
-        //        {
-        //            Console.ResetColor();
-        //            Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
-        //            Console.ResetColor();
-        //        }
-
-
-        //        tecla = Console.ReadKey(true).Key;
-
-        //        if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
-        //        else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
-
-        //    } while (tecla != ConsoleKey.Enter);
-
-        //    switch (seleccion)
-        //    {
-        //        case 0: SubmenuRegistro(); break;
-        //        case 2: SubmenuReportes(); break;
-        //        case 3: Environment.Exit(0); break;
-        //    }
-        //}
-
-        // SUBMENÚ REGISTRO
-        static void SubmenuRegistro()
-        {
-            string[] opciones = { "1DOCENTE", "2ESTUDIANTE", "3CURSO", "VOLVER" };
-            int seleccion = 0;
-            ConsoleKey tecla;
-
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("SUBMENÚ DE REGISTRO\n");
-
-                for (int i = 0; i < opciones.Length; i++)
-                    Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
-
-                tecla = Console.ReadKey(true).Key;
-
-                if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
-                else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
-
-            } while (tecla != ConsoleKey.Enter);
-
-            switch (seleccion)
-            {
-                case 0: Docente.Registrar(); break;
-                case 1: Estudiante.Registrar(); break;
-                case 2: Curso.Registrar(); break;
-                //case 3: MostrarMenuPrincipal(); return;
-            }
-
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-            Console.ReadKey();
-            SubmenuRegistro();
-        }
+            ClaseMenu.OpcionMenu();
+        }  
 
         // SUBMENÚ REPORTES
         static void SubmenuReportes()
