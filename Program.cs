@@ -9,42 +9,7 @@ namespace SistemaRegistro
         {
             ClaseMenu.OpcionMenu();
         }  
-
-        // SUBMENÚ REPORTES
-        static void SubmenuReportes()
-        {
-            string[] opciones = { "DOCENTE", "ESTUDIANTE", "CURSO", "VOLVER" };
-            int seleccion = 0;
-            ConsoleKey tecla;
-
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("SUBMENÚ DE REPORTES\n");
-
-                for (int i = 0; i < opciones.Length; i++)
-                    Console.WriteLine(i == seleccion ? $"> {opciones[i]}" : $"  {opciones[i]}");
-
-                tecla = Console.ReadKey(true).Key;
-
-                if (tecla == ConsoleKey.RightArrow) seleccion = (seleccion + 1) % opciones.Length;
-                else if (tecla == ConsoleKey.LeftArrow) seleccion = (seleccion - 1 + opciones.Length) % opciones.Length;
-
-            } while (tecla != ConsoleKey.Enter);
-
-            switch (seleccion)
-            {
-                case 0: MostrarReporteDocente(); break;
-                case 1: MostrarReporteEstudiante(); break;
-                case 2: MostrarReporteCurso(); break;
-                //case 3: MostrarMenuPrincipal(); return;
-            }
-
-            Console.WriteLine("\nPresiona cualquier tecla para continuar...");
-            Console.ReadKey();
-            SubmenuReportes();
-        }
-
+             
         // REPORTES
         static void MostrarReporteDocente()
         {
