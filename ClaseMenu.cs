@@ -20,15 +20,28 @@ namespace SistemaRegistro
                 Console.Clear();
                 Console.BackgroundColor = ConsoleColor.Green;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine("------------------------------------------------------");
-                Console.WriteLine("           SISTEMA DE GESTION DE ASISTENCIAS          ");
-                Console.WriteLine("------------------------------------------------------");
+                Console.WriteLine("--------------------------------------------------------");
+                Console.WriteLine("           SISTEMA DE GESTION DE ASISTENCIAS            ");
+                Console.WriteLine("--------------------------------------------------------");
 
                 for (int i = 0; i < opciones.Length; i++)
                 {
                     Console.ResetColor();
-                    Console.WriteLine(i == index ? $"> {opciones[i]}" : $"  {opciones[i]}");
-                    Console.ResetColor();
+
+                    if (i == index)
+                    {
+
+                        Console.BackgroundColor = ConsoleColor.White;
+                        Console.ForegroundColor = ConsoleColor.Black;
+
+                        Console.Write(" > " + opciones[i] + "   ");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.Write("   " + opciones[i] + "   ");
+                        Console.ResetColor();
+                    }
                 }
 
 

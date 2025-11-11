@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Cristhofer\\source\\repos\\SistemaRegistro\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0AA5E9A8-3A64-4756-8B20-2F4E39BBE3FA}|SistemaRegistro.csproj|c:\\users\\cristhofer\\source\\repos\\sistemaregistro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0AA5E9A8-3A64-4756-8B20-2F4E39BBE3FA}|SistemaRegistro.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0AA5E9A8-3A64-4756-8B20-2F4E39BBE3FA}|SistemaRegistro.csproj|c:\\users\\cristhofer\\source\\repos\\sistemaregistro\\clasemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0AA5E9A8-3A64-4756-8B20-2F4E39BBE3FA}|SistemaRegistro.csproj|solutionrelative:clasemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA5E9A8-3A64-4756-8B20-2F4E39BBE3FA}|SistemaRegistro.csproj|C:\\Users\\Cristhofer\\source\\repos\\SistemaRegistro\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0AA5E9A8-3A64-4756-8B20-2F4E39BBE3FA}|SistemaRegistro.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,24 +18,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ClaseMenu.cs",
               "DocumentMoniker": "C:\\Users\\Cristhofer\\source\\repos\\SistemaRegistro\\ClaseMenu.cs",
               "RelativeDocumentMoniker": "ClaseMenu.cs",
-              "ToolTip": "C:\\Users\\Cristhofer\\source\\repos\\SistemaRegistro\\ClaseMenu.cs",
-              "RelativeToolTip": "ClaseMenu.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Cristhofer\\source\\repos\\SistemaRegistro\\ClaseMenu.cs*",
+              "RelativeToolTip": "ClaseMenu.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-10T14:05:46.286Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Cristhofer\\source\\repos\\SistemaRegistro\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
